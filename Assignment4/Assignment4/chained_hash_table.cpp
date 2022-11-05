@@ -24,6 +24,7 @@ void chained_hash_table::insert(const std::string& key, employee* value) {
 
 		linked_node* itr = table_[index];
 		while (itr->next != nullptr) {
+			collisions_++;
 			itr = itr->next;
 		}
 		itr->next = new_node;
@@ -69,6 +70,7 @@ void chained_hash_table::print() const {
 			const linked_node* itr = this->table_[i];
 
 			if (itr != nullptr) {
+				std::cout << "[" << i << "] ";
 				std::cout << itr->key << ": " << itr->value->get_age() << ", " << itr->value->get_salary() << ", " << itr->value->get_experience();
 
 				while (itr->next != nullptr) {

@@ -8,7 +8,7 @@
 
 
 void chained_hash_table_test() {
-	auto* table = new chained_hash_table(11);
+	auto* table = new chained_hash_table(21);
 
 	table->insert("Mina", new employee("Mina", 30, 10000, 4));
 	table->insert("Fawzy", new employee("Fawzy", 45, 5000, 8));
@@ -33,7 +33,7 @@ void chained_hash_table_test() {
 }
 
 void linear_hash_table_test() {
-	auto* table = new linear_hash_table(11);
+	auto* table = new linear_hash_table(21);
 
 	table->insert("Mina", new employee("Mina", 30, 10000, 4));
 	table->insert("Fawzy", new employee("Fawzy", 45, 5000, 8));

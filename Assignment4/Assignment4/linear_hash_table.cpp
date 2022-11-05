@@ -38,8 +38,10 @@ void linear_hash_table::remove(const std::string& key) {
 }
 
 void linear_hash_table::print() const {
-	for (const auto& emp : this->table_) {
+	for (int i = 0; i < this->table_.size(); ++i) {
+		employee* emp = this->table_[i];
 		if (emp != nullptr) {
+			std::cout << "[" << i << "] ";
 			std::cout << emp->get_name() << ": " << emp->get_age() << ", " << emp->get_salary() << ", " << emp->get_experience() << '\n';
 		}
 	}

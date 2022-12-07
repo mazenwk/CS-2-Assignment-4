@@ -31,6 +31,9 @@ void linear_hash_table::remove(const std::string& key) {
 
 	while (this->table_[index] != nullptr && this->table_[index]->get_name() != key) {
 		index++;
+		if (index >= this->size_) {
+			index = 0;
+		}
 	}
 
 	delete this->table_[index];
